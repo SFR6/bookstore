@@ -1,0 +1,8 @@
+<%= render @ordersdetail %>
+
+<div>
+  <%= link_to "Edit this Orders Details", edit_ordersdetail_path(@ordersdetail) %> |
+  <%= link_to "Back to Orders Details", ordersdetails_path %>
+
+  <%= button_to "Destroy this Orders Details", @ordersdetail, method: :delete %>
+</div>

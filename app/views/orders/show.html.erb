@@ -1,0 +1,21 @@
+<p><strong>Payment Method: </strong><%= Paymentmethod.find(@order.payment_method_id).name %></p>
+<p><strong>Employee: </strong><%= Employee.find(@order.employee_id).name %></p>
+<p><strong>Customer: </strong><%= Customer.find(@order.customer_id).name %></p>
+<p><strong>Books: </strong>
+  <% Ordersdetail.where(order_id: @order.order_id).each_with_index do |order_details, index| %>
+  <%= Book.find(order_details.book_id).title %>
+    <% unless index == Ordersdetail.where(order_id: @order.order_id).count - 1 %> | <% end %>
+  <% end %>
+</p>
+
+<p><strong>Total Price: </strong>
+  <% total_price = 0 %>
+  <% Ordersdetail.where(order_id: @order.order_id).each do |order_details| %>
+    <% total_price += Book.find(order_details.book_id).price %>
+  <% end %>
+  <%= total_price %>
+</p>
+
+<div>
+  <%= link_to "Back", orders_path, class: "btn btn-info btn-sm", style: "color: white;"%>
+</div>

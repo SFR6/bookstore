@@ -1,0 +1,376 @@
+
+---
+ar_internal_metadata:
+  columns:
+  - key
+  - value
+  - created_at
+  - updated_at
+  records: 
+  - - environment
+    - development
+    - 2023-10-18 16:48:10.510185000 Z
+    - 2023-10-18 16:48:10.510187000 Z
+  - - schema_sha1
+    - 83f52e8cdad4ec6d956b279e2568979592f06de3
+    - 2023-10-18 16:48:10.513590000 Z
+    - 2023-10-18 16:48:10.513591000 Z
+
+---
+author:
+  columns:
+  - author_id
+  - name
+  - nationality
+  records: 
+  - - 1
+    - Anissa Gray
+    - American
+  - - 2
+    - Neal Stephenson
+    - American
+  - - 3
+    - Jon Meacham
+    - American
+  - - 4
+    - Patricia Lockwood
+    - American
+  - - 5
+    - Ana Huang
+    - American
+  - - 6
+    - Ronan Farrow
+    - American
+  - - 7
+    - Meg Wolitzer
+    - American
+  - - 8
+    - Randall Munroe
+    - American
+  - - 9
+    - Ann Patchett
+    - American
+  - - 10
+    - W.G. Sebald
+    - German
+
+---
+book:
+  columns:
+  - book_id
+  - title
+  - price
+  - author_id
+  - genre_id
+  records: 
+  - - 1
+    - The Care and Feeding of Ravenously Hungry Girls
+    - !ruby/object:BigDecimal 18:0.1e2
+    - 1
+    - 6
+  - - 2
+    - Seveneves
+    - !ruby/object:BigDecimal 18:0.12e2
+    - 2
+    - 1
+  - - 3
+    - 'Thomas Jefferson: The Art of Power'
+    - !ruby/object:BigDecimal 18:0.2e2
+    - 3
+    - 3
+  - - 4
+    - No One Is Talking About This
+    - !ruby/object:BigDecimal 18:0.22e2
+    - 4
+    - 2
+  - - 5
+    - 'Twisted Hate (Twisted, #3)'
+    - !ruby/object:BigDecimal 18:0.14e2
+    - 5
+    - 5
+  - - 6
+    - Catch and Kill
+    - !ruby/object:BigDecimal 18:0.13e2
+    - 6
+    - 7
+  - - 7
+    - The Interestings
+    - !ruby/object:BigDecimal 18:0.25e2
+    - 7
+    - 3
+  - - 8
+    - Reamde
+    - !ruby/object:BigDecimal 18:0.1e3
+    - 8
+    - 9
+  - - 9
+    - 'What If?: Serious Scientific Answers to Absurd Hypothetical Questions'
+    - !ruby/object:BigDecimal 18:0.45e2
+    - 2
+    - 10
+  - - 10
+    - 'These Precious Days: Essays'
+    - !ruby/object:BigDecimal 18:0.5e2
+    - 9
+    - 3
+
+---
+customer:
+  columns:
+  - customer_id
+  - name
+  - phone_number
+  records: 
+  - - 1
+    - Valentino Germano
+    - "+4075272339"
+  - - 2
+    - Animikii Grant
+    - "(0040) 87213"
+  - - 3
+    - Kiril Beitel
+    - '03247234'
+  - - 4
+    - Monika Tolvaj
+    - '34534'
+  - - 5
+    - Angelika Malley
+    - 5555-7734
+  - - 6
+    - Ulf Wahner
+    -
+  - - 7
+    - Autumn Rey
+    -
+  - - 8
+    - Parthenope Cardozo
+    -
+  - - 9
+    - Diokles Elizondo
+    -
+  - - 10
+    - Tallulah Kanzaki
+    -
+
+---
+employee:
+  columns:
+  - employee_id
+  - name
+  - age
+  - phone_number
+  records: 
+  - - 1
+    - Midge Clay
+    - 43
+    - '26423434'
+  - - 2
+    - Liberty Blackman
+    - 23
+    - '08236457'
+  - - 3
+    - Cila Miller
+    - 56
+    - '3245'
+  - - 4
+    - Gracilia Scherer
+    - 16
+    - '178543'
+  - - 5
+    - Africanus Stigsson
+    - 32
+    - "+823748"
+  - - 6
+    - Pace Jundt
+    - 25
+    - "(00) - 23647"
+
+---
+genre:
+  columns:
+  - genre_id
+  - genre_name
+  records: 
+  - - 1
+    - Romance
+  - - 2
+    - Mystery
+  - - 3
+    - Science Fiction
+  - - 4
+    - Horror
+  - - 5
+    - Thriller
+  - - 6
+    - Drama
+  - - 7
+    - Biography
+  - - 8
+    - Cooking
+  - - 9
+    - Business
+  - - 10
+    - Fantasy
+
+---
+orders:
+  columns:
+  - order_id
+  - payment_method_id
+  - employee_id
+  - customer_id
+  records: 
+  - - 1
+    - 1
+    - 1
+    - 5
+  - - 2
+    - 2
+    - 6
+    - 4
+  - - 3
+    - 4
+    - 2
+    - 4
+  - - 4
+    - 2
+    - 3
+    - 6
+  - - 5
+    - 3
+    - 4
+    - 9
+  - - 6
+    - 5
+    - 3
+    - 7
+  - - 7
+    - 4
+    - 4
+    - 7
+  - - 8
+    - 5
+    - 2
+    - 10
+  - - 9
+    - 3
+    - 5
+    - 8
+  - - 10
+    - 2
+    - 1
+    - 1
+
+---
+ordersdetails:
+  columns:
+  - ordersDetails_id
+  - order_id
+  - book_id
+  records: 
+  - - 1
+    - 1
+    - 1
+  - - 2
+    - 1
+    - 2
+  - - 3
+    - 1
+    - 6
+  - - 4
+    - 2
+    - 7
+  - - 5
+    - 2
+    - 10
+  - - 6
+    - 3
+    - 5
+  - - 7
+    - 4
+    - 8
+  - - 8
+    - 4
+    - 9
+  - - 9
+    - 5
+    - 4
+  - - 10
+    - 5
+    - 3
+  - - 11
+    - 5
+    - 2
+  - - 12
+    - 5
+    - 2
+  - - 13
+    - 6
+    - 2
+  - - 14
+    - 7
+    - 6
+  - - 15
+    - 7
+    - 6
+  - - 16
+    - 8
+    - 5
+  - - 17
+    - 9
+    - 4
+  - - 18
+    - 10
+    - 5
+  - - 19
+    - 10
+    - 9
+  - - 20
+    - 10
+    - 10
+
+---
+paymentmethod:
+  columns:
+  - paymentMethod_id
+  - name
+  records: 
+  - - 1
+    - Cash
+  - - 2
+    - Card
+  - - 3
+    - Online Payment
+  - - 4
+    - Cryptocurrency
+  - - 5
+    - Gift Card
+
+---
+rating:
+  columns:
+  - review_id
+  - book_id
+  - comments
+  - number_of_stars
+  records: 
+  - - 1
+    - 1
+    - Loved it!
+    - 5
+  - - 2
+    - 5
+    - I liked the protagonist, but the plot lacked a special something.
+    - 4
+  - - 3
+    - 3
+    - Did not enjoy it. It is not worth it.
+    - 2
+  - - 4
+    - 7
+    - WORST BOOK EVER!!!!!
+    - 1
+  - - 5
+    - 4
+    - More action would have been nice.
+    - 3

@@ -1,0 +1,31 @@
+<div class="container">
+  <h1 class="text-center">List of Payment Methods</h1>
+
+  <table class="table table-striped">
+    <thead>
+    <tr>
+      <th style="font-size: 20px">Payment Method Name</th>
+      <th></th>
+    </tr>
+    </thead>
+    <tbody class="table-group-divider">
+    <% @paymentmethods.each do |paymentmethod| %>
+      <tr>
+        <td><%= paymentmethod.name %></td>
+        <td>
+          <%= link_to "Show", paymentmethod, class: "btn btn-primary" %>
+        </td>
+        <td>
+          <%= link_to "Edit", edit_paymentmethod_path(paymentmethod), class: "btn btn-warning", style: "color: white;"%>
+        </td>
+        <td>
+          <%= button_to "Destroy", paymentmethod, method: :delete, class: "btn btn-danger"%>
+        </td>
+      </tr>
+    <% end %>
+    </tbody>
+  </table>
+
+  <%= link_to "Create New Payment Method", new_paymentmethod_path, class: "btn btn-success" %>
+</div>
+<br><br>

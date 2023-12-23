@@ -1,0 +1,31 @@
+<div class="container">
+  <h1 class="text-center">List of Employees</h1>
+
+  <table class="table table-striped">
+    <thead>
+    <tr>
+      <th style="font-size: 20px">Employee Name</th>
+      <th></th>
+    </tr>
+    </thead>
+    <tbody class="table-group-divider">
+    <% @employees.each do |employee| %>
+      <tr>
+        <td><%= employee.name %></td>
+        <td>
+          <%= link_to "Show", employee, class: "btn btn-primary" %>
+        </td>
+        <td>
+          <%= link_to "Edit", edit_employee_path(employee), class: "btn btn-warning", style: "color: white;"%>
+        </td>
+        <td>
+          <%= button_to "Destroy", employee, method: :delete, class: "btn btn-danger"%>
+        </td>
+      </tr>
+    <% end %>
+    </tbody>
+  </table>
+
+  <%= link_to "Create New Employee", new_employee_path, class: "btn btn-success" %>
+</div>
+<br><br>

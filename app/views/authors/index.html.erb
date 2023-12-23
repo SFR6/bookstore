@@ -1,0 +1,31 @@
+<div class="container">
+  <h1 class="text-center">List of Authors</h1>
+
+  <table class="table table-striped">
+    <thead>
+    <tr>
+      <th style="font-size: 20px">Author Name</th>
+      <th></th>
+    </tr>
+    </thead>
+    <tbody class="table-group-divider">
+    <% @authors.each do |author| %>
+      <tr>
+        <td><%= author.name %></td>
+        <td>
+          <%= link_to "Show", author, class: "btn btn-primary" %>
+        </td>
+        <td>
+          <%= link_to "Edit", edit_author_path(author), class: "btn btn-warning", style: "color: white;"%>
+        </td>
+        <td>
+          <%= button_to "Destroy", author, method: :delete, class: "btn btn-danger"%>
+        </td>
+      </tr>
+    <% end %>
+    </tbody>
+  </table>
+
+  <%= link_to "Create New Author", new_author_path, class: "btn btn-success" %>
+</div>
+<br><br>

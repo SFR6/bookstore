@@ -1,0 +1,31 @@
+<div class="container">
+  <h1 class="text-center">List of Customers</h1>
+
+  <table class="table table-striped">
+    <thead>
+    <tr>
+      <th style="font-size: 20px">Customer Name</th>
+      <th></th>
+    </tr>
+    </thead>
+    <tbody class="table-group-divider">
+    <% @customers.each do |customer| %>
+      <tr>
+        <td><%= customer.name %></td>
+        <td>
+          <%= link_to "Show", customer, class: "btn btn-primary" %>
+        </td>
+        <td>
+          <%= link_to "Edit", edit_customer_path(customer), class: "btn btn-warning", style: "color: white;"%>
+        </td>
+        <td>
+          <%= button_to "Destroy", customer, method: :delete, class: "btn btn-danger"%>
+        </td>
+      </tr>
+    <% end %>
+    </tbody>
+  </table>
+
+  <%= link_to "Create New Customer", new_customer_path, class: "btn btn-success" %>
+</div>
+<br><br>

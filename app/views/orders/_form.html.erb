@@ -1,0 +1,68 @@
+<%= form_with(model: order) do |form| %>
+  <% if order.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(order.errors.count, "error") %> prohibited this order from being saved:</h2>
+
+      <ul>
+        <% order.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :payment_method_id, style: "display: block" %>
+    <%= form.select :payment_method_id, Paymentmethod.all.map { |paymentmethod| [paymentmethod.name, paymentmethod.paymentMethod_id] }, class: "form-control" %>
+  </div>
+
+  <div>
+    <%= form.label :employee_id, style: "display: block" %>
+    <%= form.select :employee_id, Employee.all.map { |employee| [employee.name, employee.employee_id] }, class: "form-control" %>
+  </div>
+
+  <div>
+    <%= form.label :customer_id, style: "display: block" %>
+    <%= form.select :customer_id, Customer.all.map { |customer| [customer.name, customer.customer_id] }, class: "form-control" %>
+  </div>
+
+  <div>
+    <%= form.label :"Book 1", style: "display: block" %>
+    <% book_options = Book.all.map { |book| [book.title, book.book_id] } %>
+    <% book_options.unshift(["None", nil]) %>
+    <%= form.select :book_id_1, book_options, class: "form-control" %>
+  </div>
+
+  <div>
+    <%= form.label :"Book 2", style: "display: block" %>
+    <% book_options = Book.all.map { |book| [book.title, book.book_id] } %>
+    <% book_options.unshift(["None", nil]) %>
+    <%= form.select :book_id_2, book_options, class: "form-control" %>
+  </div>
+
+  <div>
+    <%= form.label :"Book 3", style: "display: block" %>
+    <% book_options = Book.all.map { |book| [book.title, book.book_id] } %>
+    <% book_options.unshift(["None", nil]) %>
+    <%= form.select :book_id_3, book_options, class: "form-control" %>
+  </div>
+
+  <div>
+    <%= form.label :"Book 4", style: "display: block" %>
+    <% book_options = Book.all.map { |book| [book.title, book.book_id] } %>
+    <% book_options.unshift(["None", nil]) %>
+    <%= form.select :book_id_4, book_options, class: "form-control" %>
+  </div>
+
+  <div>
+    <%= form.label :"Book 5", style: "display: block" %>
+    <% book_options = Book.all.map { |book| [book.title, book.book_id] } %>
+    <% book_options.unshift(["None", nil]) %>
+    <%= form.select :book_id_5, book_options, class: "form-control" %>
+  </div>
+
+  <br>
+  <div class="form-group">
+    <%= form.submit class: "btn btn-success"%>
+  </div>
+<% end %>

@@ -1,0 +1,7 @@
+<p><strong>Book: </strong><%= Book.find(@rating.book_id).title %></p>
+<p><strong>Comments: </strong><%= @rating.comments %></p>
+<p><strong>Number of Stars: </strong><%= @rating.number_of_stars %></p>
+
+<div>
+  <%= link_to "Back", ratings_path, class: "btn btn-info btn-sm", style: "color: white;"%>
+</div>

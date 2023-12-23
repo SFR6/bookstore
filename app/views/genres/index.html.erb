@@ -1,0 +1,31 @@
+<div class="container">
+  <h1 class="text-center">List of Genres</h1>
+
+  <table class="table table-striped">
+    <thead>
+    <tr>
+      <th style="font-size: 20px">Genre Name</th>
+      <th></th>
+    </tr>
+    </thead>
+    <tbody class="table-group-divider">
+    <% @genres.each do |genre| %>
+      <tr>
+        <td><%= genre.genre_name %></td>
+        <td>
+          <%= link_to "Show", genre, class: "btn btn-primary" %>
+        </td>
+        <td>
+          <%= link_to "Edit", edit_genre_path(genre), class: "btn btn-warning", style: "color: white;"%>
+        </td>
+        <td>
+          <%= button_to "Destroy", genre, method: :delete, class: "btn btn-danger"%>
+        </td>
+      </tr>
+    <% end %>
+    </tbody>
+  </table>
+
+  <%= link_to "Create New Genre", new_genre_path, class: "btn btn-success" %>
+</div>
+<br><br>
