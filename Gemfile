@@ -16,6 +16,7 @@ gem "bootsnap", require: false
 gem 'devise', '~> 4.9', '>= 4.9.3'
 gem 'jquery-rails', '~> 4.6'
 gem 'jquery-ui-rails', '~> 6.0', '>= 6.0.1'
+gem "mysql2"
 
 
 group :development, :test do
