@@ -28,8 +28,7 @@ group :development do
 end
 
 group :production do
-  gem 'mysql2postgres', '~> 0.4.1'
-  gem 'pg', '~> 1.2.2'
+  gem 'pg', '~> 1.5', '>= 1.5.4'
 end
 
 group :test do
