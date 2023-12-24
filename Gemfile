@@ -18,7 +18,6 @@ gem 'jquery-rails', '~> 4.6'
 gem 'jquery-ui-rails', '~> 6.0', '>= 6.0.1'
 gem "mysql2"
 
-
 group :development, :test do
   gem "debug", platforms: %i[ mri windows ]
 end
@@ -29,6 +28,7 @@ group :development do
 end
 
 group :production do
+  gem 'mysql2postgres', '~> 0.4.1'
   gem 'pg', '~> 1.5', '>= 1.5.4'
 end
 
