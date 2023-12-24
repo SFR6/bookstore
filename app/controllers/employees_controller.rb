@@ -1,5 +1,5 @@
 class EmployeesController < ApplicationController
-  protect_from_forgery
+  before_action :authenticate_user!
   before_action :set_employee, only: %i[ show edit update destroy ]
 
   # GET /employees or /employees.json

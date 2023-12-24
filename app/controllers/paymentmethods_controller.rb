@@ -1,5 +1,5 @@
 class PaymentmethodsController < ApplicationController
-  protect_from_forgery
+  before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
   before_action :set_paymentmethod, only: %i[ show edit update destroy ]
 
   # GET /paymentmethods or /paymentmethods.json

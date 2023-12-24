@@ -1,5 +1,5 @@
 class BooksController < ApplicationController
-  protect_from_forgery
+  before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
   before_action :set_book, only: %i[ show edit update destroy ]
 
   # GET /books or /books.json

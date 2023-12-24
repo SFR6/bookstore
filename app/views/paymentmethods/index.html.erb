@@ -15,17 +15,20 @@
         <td>
           <%= link_to "Show", paymentmethod, class: "btn btn-primary" %>
         </td>
-        <td>
-          <%= link_to "Edit", edit_paymentmethod_path(paymentmethod), class: "btn btn-warning", style: "color: white;"%>
-        </td>
-        <td>
-          <%= button_to "Destroy", paymentmethod, method: :delete, class: "btn btn-danger"%>
-        </td>
+        <% if user_signed_in? %>
+          <td>
+            <%= link_to "Edit", edit_paymentmethod_path(paymentmethod), class: "btn btn-warning", style: "color: white;"%>
+          </td>
+          <td>
+            <%= button_to "Destroy", paymentmethod, method: :delete, class: "btn btn-danger"%>
+          </td>
+        <% end %>
       </tr>
     <% end %>
     </tbody>
   </table>
-
-  <%= link_to "Create New Payment Method", new_paymentmethod_path, class: "btn btn-success" %>
+  <% if user_signed_in? %>
+    <%= link_to "Create New Payment Method", new_paymentmethod_path, class: "btn btn-success" %>
+  <% end %>
 </div>
 <br><br>

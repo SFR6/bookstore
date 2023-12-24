@@ -3,15 +3,19 @@ Rails.application.routes.draw do
   devise_scope :user do
     get '/users/sign_out' => 'devise/sessions#destroy'
   end
-  resources :ratings
-  resources :paymentmethods
-  resources :ordersdetails
-  resources :orders
-  resources :genres
-  resources :employees
-  resources :customers
-  resources :books
-  resources :authors
+
+  #authenticated :user do
+    resources :ratings
+    resources :paymentmethods
+    resources :ordersdetails
+    resources :orders
+    resources :genres
+    resources :employees
+    resources :customers
+    resources :books
+    resources :authors
+  #end
+
   # get 'home/index'
   get 'home/about'
 

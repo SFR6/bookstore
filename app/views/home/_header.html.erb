@@ -8,16 +8,22 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <%= link_to 'Authors', authors_path, class: "nav-link active" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to 'Books', books_path, class: "nav-link active" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to 'Genres', genres_path, class: "nav-link active" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to 'Ratings', ratings_path, class: "nav-link active" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to 'Payment Methods', paymentmethods_path, class: "nav-link active" %>
+        </li>
         <% if user_signed_in? %>
-          <li class="nav-item">
-            <%= link_to 'Authors', authors_path, class: "nav-link active" %>
-          </li>
-          <li class="nav-item">
-            <%= link_to 'Books', books_path, class: "nav-link active" %>
-          </li>
-          <li class="nav-item">
-            <%= link_to 'Genres', genres_path, class: "nav-link active" %>
-          </li>
           <li class="nav-item">
             <%= link_to 'Customers', customers_path, class: "nav-link active" %>
           </li>
@@ -26,12 +32,6 @@
           </li>
           <li class="nav-item">
             <%= link_to 'Orders', orders_path, class: "nav-link active" %>
-          </li>
-          <li class="nav-item">
-            <%= link_to 'Payment Methods', paymentmethods_path, class: "nav-link active" %>
-          </li>
-          <li class="nav-item">
-            <%= link_to 'Ratings', ratings_path, class: "nav-link active" %>
           </li>
         <% end %>
         <li class="nav-item dropdown">

@@ -1,5 +1,5 @@
 class OrdersController < ApplicationController
-  protect_from_forgery
+  before_action :authenticate_user!
   before_action :set_order, only: %i[ show edit update destroy ]
 
   # GET /orders or /orders.json
@@ -18,6 +18,7 @@ class OrdersController < ApplicationController
 
   # GET /orders/1/edit
   def edit
+    return
   end
 
   # POST /orders or /orders.json
@@ -54,6 +55,7 @@ class OrdersController < ApplicationController
 
   # PATCH/PUT /orders/1 or /orders/1.json
   def update
+    return
     respond_to do |format|
       if @order.update(order_params)
         format.html { redirect_to order_url(@order), notice: "Order was successfully updated." }

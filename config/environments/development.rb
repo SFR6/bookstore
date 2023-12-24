@@ -77,4 +77,21 @@ Rails.application.configure do
   config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
 
   config.action_dispatch.signed_cookie_digest = "SHA256"
+
+  config.action_dispatch.cookies_rotations.tap do |cookies|
+    cookies.rotate :signed, digest: "SHA1"
+  end
+
+  config.filter_parameters << :password
+
+  config.action_dispatch.perform_deep_munge = true
+
+  config.action_dispatch.default_headers = {
+    'X-Frame-Options' => 'SAMEORIGIN',
+    'X-XSS-Protection' => '0',
+    'X-Content-Type-Options' => 'nosniff',
+    'X-Permitted-Cross-Domain-Policies' => 'none',
+    'Referrer-Policy' => 'strict-origin-when-cross-origin'
+  }
+
 end

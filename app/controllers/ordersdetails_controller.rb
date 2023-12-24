@@ -1,27 +1,32 @@
 class OrdersdetailsController < ApplicationController
-  protect_from_forgery
+  before_action :authenticate_user!
   before_action :set_ordersdetail, only: %i[ show edit update destroy ]
 
   # GET /ordersdetails or /ordersdetails.json
   def index
+    return
     @ordersdetails = Ordersdetail.all
   end
 
   # GET /ordersdetails/1 or /ordersdetails/1.json
   def show
+    return
   end
 
   # GET /ordersdetails/new
   def new
+    return
     @ordersdetail = Ordersdetail.new
   end
 
   # GET /ordersdetails/1/edit
   def edit
+    return
   end
 
   # POST /ordersdetails or /ordersdetails.json
   def create
+    return
     @ordersdetail = Ordersdetail.new(ordersdetail_params)
 
     respond_to do |format|
@@ -37,6 +42,7 @@ class OrdersdetailsController < ApplicationController
 
   # PATCH/PUT /ordersdetails/1 or /ordersdetails/1.json
   def update
+    return
     respond_to do |format|
       if @ordersdetail.update(ordersdetail_params)
         format.html { redirect_to ordersdetail_url(@ordersdetail), notice: "Ordersdetail was successfully updated." }
@@ -50,6 +56,7 @@ class OrdersdetailsController < ApplicationController
 
   # DELETE /ordersdetails/1 or /ordersdetails/1.json
   def destroy
+    return
     @ordersdetail.destroy!
 
     respond_to do |format|

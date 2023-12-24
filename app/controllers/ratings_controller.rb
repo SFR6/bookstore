@@ -1,5 +1,5 @@
 class RatingsController < ApplicationController
-  protect_from_forgery
+  before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
   before_action :set_rating, only: %i[ show edit update destroy ]
 
   # GET /ratings or /ratings.json
